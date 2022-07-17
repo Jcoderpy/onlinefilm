@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 justify-content-md-center">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input class="form-control form-control-md p-4 m-3 w-25" name="name" type="text" placeholder="Movie Name" aria-label=".form-control-lg example">
+                <input class="form-control form-control-md p-4 m-3 w-25 h-50" name="few" type="text" placeholder="Write a discription..." cols="30" rows="10" id="floatingTextarea" aria-label=".form-control-lg example">
+                <input class="form-control form-control-md p-4 m-3 w-25" name="year" type="text" placeholder="Year" aria-label=".form-control-lg example">
+                <input class="form-control form-control-md p-4 m-3 w-25" name="img" type="file">
+                <input href="{% url 'filmapp:add_movie' %}" type="submit" class="btn btn-primary p-4 m-3 w-25">
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}
+<textarea name="" id="" ></textarea>

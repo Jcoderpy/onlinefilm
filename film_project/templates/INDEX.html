@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        {% for i in movie_list %}
+        <div class="col-md-3 p-3">
+            <div class="card img-fluid h-100" style="padding: 1rem; margin-left: 2rem;">
+                <img src="{{i.img.url}}" class="card-img-top img-fluid img-thumbnail" alt="..." style="height: 100%; width: auto;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: red; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; text-transform: uppercase; font-weight: bold; ">{{i.name}}</h5>
+                    <a href="{% url 'filmapp:detail' i.id %}" class="btn btn-warning card-btn-bottom" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">More About the movie</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    
+</div>
+
+{% endblock %}
